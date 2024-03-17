@@ -10,7 +10,7 @@ import Container from "/components/layout-components/Container";
 
 /* Icon Imports */
 
-import { AcUnit, DesignServices } from "@mui/icons-material";
+import { AcUnit, DesignServices, Engineering } from "@mui/icons-material";
 
 /* Styled Components */
 
@@ -19,13 +19,14 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "2rem 1.5rem 5rem 1.5rem",
+  padding: "3rem 1.5rem 5rem 1.5rem",
   gap: "2rem",
-  backgroundColor: theme.palette.background.dim,
-  backgroundImage: "url('/images/services_bg.png')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
+  // backgroundColor: theme.palette.background.dim,
+  background: "linear-gradient(to right, #141e30, #243b55)",
+  // backgroundImage: "url('/images/services_bg.png')",
+  // backgroundSize: "cover",
+  // backgroundPosition: "center",
+  // backgroundRepeat: "no-repeat",
 }));
 
 const CardsContainer = styled("div")(({ theme }) => ({
@@ -34,7 +35,7 @@ const CardsContainer = styled("div")(({ theme }) => ({
   justifyContent: "space-around",
   alignItems: "center",
   width: "100%",
-  gap: "1rem",
+  gap: "2rem",
   flexWrap: "wrap",
   [theme.breakpoints.down("sm")]: { flexDirection: "column" },
 }));
@@ -51,11 +52,11 @@ const Card = styled(Paper)(({ theme }) => ({
   padding: "2rem 1rem 2rem 1rem",
   [theme.breakpoints.down("md")]: { width: "48%", height: "21rem" },
   [theme.breakpoints.down("sm")]: { width: "100%", height: "23rem" },
-  "&:hover": {
-    border: `0.5px solid ${theme.palette.primary.main}`,
-    transform: "scale(1.05)",
-    transition: "0.4s",
-  },
+  // "&:hover": {
+  //   border: `0.5px solid ${theme.palette.primary.main}`,
+  //   transform: "scale(1.05)",
+  //   transition: "0.4s",
+  // },
 }));
 
 const TextContainer = styled("div")(({ theme }) => ({
@@ -72,12 +73,12 @@ export default function OurServices() {
 
   return (
     <React.Fragment>
-      <RootDiv>
+      <RootDiv id="our-services">
         <Container>
           <Typography
             variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
             align="center"
-            color="primary"
+            color="white"
             fontWeight={600}
           >
             Our Services
@@ -90,12 +91,13 @@ export default function OurServices() {
               <AcUnit color="primary" sx={{ fontSize: "5rem" }} />
 
               <TextContainer>
-                <Typography variant="h6" align="center">
+                <Typography variant="h6" align="center" fontWeight={600}>
                   AC PIPING AND INSULATION
                 </Typography>
                 <Typography
                   variant="body1"
                   align="center"
+                  fontWeight={600}
                   sx={{
                     color: theme.palette.text.secondary,
                   }}
@@ -110,15 +112,16 @@ export default function OurServices() {
             {/* DUCT WORK */}
 
             <Card elevation={1}>
-              <AcUnit color="primary" sx={{ fontSize: "5rem" }} />
+              <Engineering color="primary" sx={{ fontSize: "5rem" }} />
 
               <TextContainer>
-                <Typography variant="h6" align="center">
+                <Typography variant="h6" align="center" fontWeight={600}>
                   DUCT WORK
                 </Typography>
                 <Typography
                   variant="body1"
                   align="center"
+                  fontWeight={600}
                   sx={{
                     color: theme.palette.text.secondary,
                   }}
@@ -136,19 +139,20 @@ export default function OurServices() {
               <DesignServices color="primary" sx={{ fontSize: "5rem" }} />
 
               <TextContainer>
-                <Typography variant="h6" align="center">
+                <Typography variant="h6" align="center" fontWeight={600}>
                   DESIGNING AND COMMISSIONING
                 </Typography>
                 <Typography
                   variant="body1"
                   align="center"
+                  fontWeight={600}
                   sx={{
                     color: theme.palette.text.secondary,
                   }}
                 >
                   We also provide large scale designing and commissioning
-                  services with proper strategies and infrastructure to build an
-                  effecient HVAC system.
+                  services with proper strategies to build an effecient HVAC
+                  system.
                 </Typography>
               </TextContainer>
             </Card>

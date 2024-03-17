@@ -20,7 +20,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   width: "100vw",
-  height: "90vh",
+  height: "100vh",
   position: "relative",
   backgroundImage: "url('/images/banner.jpg')",
   backgroundSize: "cover",

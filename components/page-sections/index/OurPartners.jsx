@@ -6,7 +6,6 @@ import { styled } from "@mui/system";
 /* Component Imports */
 
 import { Typography, useTheme, useMediaQuery } from "@mui/material";
-import Container from "/components/layout-components/Container";
 
 /* Styled Components */
 
@@ -32,11 +31,15 @@ const ContentContainer = styled("div")(({ theme }) => ({
 const LogosContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   alignItems: "center",
   width: "100%",
-  flexWrap: "wrap",
   gap: "1.5rem",
+  overflowX: "scroll",
+  overflowY: "hidden",
+  scrollbarWidth: "none",
+  "&::-webkit-scrollbar": { display: "none" },
+  whiteSpace: "nowrap",
 }));
 
 const CustomImg = styled("img")(({ theme }) => ({
@@ -53,57 +56,55 @@ export default function OurPartners() {
   return (
     <React.Fragment>
       <RootDiv>
-        <Container>
-          <ContentContainer>
-            <Typography
-              variant={
-                useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"
-              }
-              align="center"
-              color="primary"
-              fontWeight={600}
-            >
-              Our Partners
-            </Typography>
-            <Typography
-              variant="h6"
-              align="center"
-              sx={{
-                color: theme.palette.text.primary,
-              }}
-            >
-              We give you only the best products
-            </Typography>
-          </ContentContainer>
+        <ContentContainer>
+          <Typography
+            variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
+            align="center"
+            color="primary"
+            fontWeight={600}
+          >
+            Our Partners
+          </Typography>
+          <Typography
+            variant={
+              useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "h6"
+            }
+            align="center"
+            sx={{
+              color: theme.palette.text.primary,
+            }}
+          >
+            We source products from top brands.
+          </Typography>
+        </ContentContainer>
 
-          <LogosContainer>
-            <CustomImg
-              src="/images/banner.jpg"
-              alt="about-us"
-              referrerPolicy="no-referrer"
-            />
-            <CustomImg
-              src="/images/banner.jpg"
-              alt="about-us"
-              referrerPolicy="no-referrer"
-            />
-            <CustomImg
-              src="/images/banner.jpg"
-              alt="about-us"
-              referrerPolicy="no-referrer"
-            />
-            <CustomImg
-              src="/images/banner.jpg"
-              alt="about-us"
-              referrerPolicy="no-referrer"
-            />
-            <CustomImg
-              src="/images/banner.jpg"
-              alt="about-us"
-              referrerPolicy="no-referrer"
-            />
-          </LogosContainer>
-        </Container>
+        <LogosContainer>
+          <CustomImg
+            src="/images/banner.jpg"
+            alt="about-us"
+            referrerPolicy="no-referrer"
+          />
+          <CustomImg
+            src="/images/banner.jpg"
+            alt="about-us"
+            referrerPolicy="no-referrer"
+          />
+          <CustomImg
+            src="/images/banner.jpg"
+            alt="about-us"
+            referrerPolicy="no-referrer"
+          />
+          <CustomImg
+            src="/images/banner.jpg"
+            alt="about-us"
+            referrerPolicy="no-referrer"
+          />
+          <CustomImg
+            src="/images/banner.jpg"
+            alt="about-us"
+            referrerPolicy="no-referrer"
+          />
+        </LogosContainer>
       </RootDiv>
     </React.Fragment>
   );
