@@ -97,12 +97,22 @@ export default function HeroBanner() {
               disableRipple
               variant="contained"
               color="primary"
-              href="#services"
+              onClick={()=>{
+                  const isBrowser = typeof window !== `undefined`;
+                  if (isBrowser) {
+                    scrollTo({
+                      top: 650,
+                      behavior: "smooth",
+                    });
+                  }
+              }}
             >
               Know more
             </Button>
 
-            <ArrowDownward color="primary" />
+            <ArrowDownward color="primary" sx={{
+              float: "bottom"
+            }} />
           </ButtonContainer>
         </Overlay>
       </RootDiv>

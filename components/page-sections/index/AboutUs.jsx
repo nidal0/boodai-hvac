@@ -35,7 +35,7 @@ const CustomImg = styled("img")(({ theme }) => ({
   [theme.breakpoints.down("sm")]: { width: "20rem", height: "12rem" },
 }));
 
-export default function OurServices() {
+export default function AboutUs() {
   const theme = useTheme();
 
   return (

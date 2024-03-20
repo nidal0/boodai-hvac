@@ -242,7 +242,7 @@ const Layout = ({
         )}
 
         <FabContainer>
-          {/* Contact Us */}
+          {/* Go to top */}
 
           <CustomFab
             size="small"
@@ -253,7 +253,7 @@ const Layout = ({
             <KeyboardArrowUp fontSize="medium" sx={{ marginTop: "0.3rem" }} />
           </CustomFab>
 
-          {/* Go to top */}
+          {/* Contact Us */}
 
           <CustomFab size="small" aria-label="Go to top" href="#contact-us">
             <Phone fontSize="small" />

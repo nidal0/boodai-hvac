@@ -67,18 +67,16 @@ const Header = (props) => {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta
           name="keywords"
-          content={keywords ? keywords : "hvac, ac, air, conditioning, saudiarabia, ksa, saudi, heating, cooling"}
+          content={
+            keywords
+              ? keywords
+              : "hvac, ac, air, conditioning, saudiarabia, ksa, saudi, heating, cooling"
+          }
         />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:site_name"
-          content={title ? title : "Boodai HVAC"}
-        />
-        <meta
-          property="og:title"
-          content={title ? title : "Boodai HVAC"}
-        />
+        <meta property="og:site_name" content={title ? title : "Boodai HVAC"} />
+        <meta property="og:title" content={title ? title : "Boodai HVAC"} />
         <meta
           property="og:description"
           content={
@@ -87,6 +85,7 @@ const Header = (props) => {
               : "Boodai HVAC is a leading HVAC company in Saudi Arabia. We provide HVAC solutions for commercial and residential buildings. We provide HVAC maintenance, installation, and repair services."
           }
         />
+        <link rel="icon" href={"/images/boodai-icon.ico"} />
         {/* <meta
           property="og:url"
           content={
