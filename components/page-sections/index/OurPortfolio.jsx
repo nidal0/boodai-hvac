@@ -80,37 +80,36 @@ export default function OurPortfolio() {
             Seeing is believing. Take a look at our portfolio to see the quality
             of our work.
           </Typography>
-
-          <PhotoAlbum
-            layout="rows"
-            photos={photos}
-            // targetRowHeight={150}
-            onClick={({ index }) => setIndex(index)}
-            renderContainer={({ containerRef, containerProps, children }) => (
-              <div
-                ref={containerRef}
-                {...containerProps}
-                style={{ width: "100%" }}
-              >
-                {children}
-              </div>
-            )}
-            // renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
-            //   <CustomImg
-            //     src="/images/banner.jpg"
-            //     alt="about-us"
-            //     referrerPolicy="no-referrer"
-            //   />
-            // )}
-          />
-          <Lightbox
-            slides={photos}
-            open={index >= 0}
-            index={index}
-            close={() => setIndex(-1)}
-            plugins={[Fullscreen,  Thumbnails, Zoom]}
-          />
         </ContentContainer>
+        <PhotoAlbum
+          layout="rows"
+          photos={photos}
+          // targetRowHeight={150}
+          onClick={({ index }) => setIndex(index)}
+          renderContainer={({ containerRef, containerProps, children }) => (
+            <div
+              ref={containerRef}
+              {...containerProps}
+              style={{ width: "100%" }}
+            >
+              {children}
+            </div>
+          )}
+          // renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
+          //   <CustomImg
+          //     src="/images/banner.jpg"
+          //     alt="about-us"
+          //     referrerPolicy="no-referrer"
+          //   />
+          // )}
+        />
+        <Lightbox
+          slides={photos}
+          open={index >= 0}
+          index={index}
+          close={() => setIndex(-1)}
+          plugins={[Fullscreen, Thumbnails, Zoom]}
+        />
       </RootDiv>
     </React.Fragment>
   );

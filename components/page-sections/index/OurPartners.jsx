@@ -14,7 +14,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "2rem 1.5rem 2rem 1.5rem",
+  padding: "3rem 1.5rem 2rem 1.5rem",
   gap: "1.5rem",
 }));
 
@@ -43,11 +43,8 @@ const LogosContainer = styled("div")(({ theme }) => ({
 }));
 
 const CustomImg = styled("img")(({ theme }) => ({
-  width: "10rem",
-  height: "10rem",
-  borderRadius: "1rem",
-  [theme.breakpoints.down("md")]: { width: "10rem", height: "10rem" },
-  [theme.breakpoints.down("sm")]: { width: "7rem", height: "7rem" },
+  width: "12rem",
+  height: "6rem",
 }));
 
 export default function OurPartners() {
@@ -63,7 +60,7 @@ export default function OurPartners() {
             color="primary"
             fontWeight={600}
           >
-            Our Partners
+            Our Sourcing Partners
           </Typography>
           <Typography
             variant={
@@ -74,35 +71,45 @@ export default function OurPartners() {
               color: theme.palette.text.primary,
             }}
           >
-            We source products from top brands.
+            We source our products from the top brands.
           </Typography>
         </ContentContainer>
 
         <LogosContainer>
           <CustomImg
-            src="/images/banner.jpg"
-            alt="about-us"
+            src="/images/partners/fuji.png"
+            alt="Fuji"
+            referrerPolicy="no-referrer"
+            sx={{ width: "9rem", height: "5.5rem" }}
+          />
+          <CustomImg
+            src="/images/partners/gree.png"
+            alt="Gree"
+            referrerPolicy="no-referrer"
+            sx={{ width: "13rem", height: "6rem" }}
+          />
+          <CustomImg
+            src="/images/partners/rheem.png"
+            alt="Rheem"
+            referrerPolicy="no-referrer"
+            sx={{ width: "6rem", height: "6rem" }}
+          />
+          <CustomImg
+            src="/images/partners/carrier.png"
+            alt="Carrier"
+            referrerPolicy="no-referrer"
+            sx={{ width: "13rem", height: "6.5rem" }}
+          />
+          <CustomImg
+            src="/images/partners/lg.png"
+            alt="LG"
             referrerPolicy="no-referrer"
           />
           <CustomImg
-            src="/images/banner.jpg"
-            alt="about-us"
+            src="/images/partners/trane.png"
+            alt="Trane"
             referrerPolicy="no-referrer"
-          />
-          <CustomImg
-            src="/images/banner.jpg"
-            alt="about-us"
-            referrerPolicy="no-referrer"
-          />
-          <CustomImg
-            src="/images/banner.jpg"
-            alt="about-us"
-            referrerPolicy="no-referrer"
-          />
-          <CustomImg
-            src="/images/banner.jpg"
-            alt="about-us"
-            referrerPolicy="no-referrer"
+            sx={{ width: "13rem", height: "5rem" }}
           />
         </LogosContainer>
       </RootDiv>
