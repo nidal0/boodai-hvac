@@ -10,7 +10,7 @@ import Container from "/components/layout-components/Container";
 
 /* Icon Imports */
 
-import { AcUnit, DesignServices, Engineering } from "@mui/icons-material";
+import { BuildOutlined } from "@mui/icons-material";
 
 /* Styled Components */
 
@@ -19,7 +19,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "3rem 1.5rem 5rem 1.5rem",
+  padding: "3rem 1.5rem 3rem 1.5rem",
   gap: "2rem",
   // backgroundColor: theme.palette.background.dim,
   background: "linear-gradient(to right, #141e30, #243b55)",
@@ -42,30 +42,19 @@ const CardsContainer = styled("div")(({ theme }) => ({
 
 const Card = styled(Paper)(({ theme }) => ({
   display: "flex",
-  flexDirection: "column",
+  flexDirection: "row",
   justifyContent: "flex-start",
   alignItems: "center",
-  width: "28%",
-  height: "22.5rem",
-  gap: "2rem",
+  width: "48%",
+  gap: "0.75rem",
   borderRadius: "1rem",
-  padding: "2rem 1rem 2rem 1rem",
-  [theme.breakpoints.down("md")]: { width: "48%", height: "21rem" },
-  [theme.breakpoints.down("sm")]: { width: "100%", height: "23rem" },
-  // "&:hover": {
-  //   border: `0.5px solid ${theme.palette.primary.main}`,
-  //   transform: "scale(1.05)",
-  //   transition: "0.4s",
-  // },
-}));
-
-const TextContainer = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  gap: "0.25rem",
+  padding: "1rem 1rem 1rem 1rem",
+  [theme.breakpoints.down("sm")]: { width: "100%" },
+  "&:hover": {
+    // border: `0.5px solid ${theme.palette.primary.main}`,
+    transform: "scale(1.05)",
+    transition: "0.4s",
+  },
 }));
 
 export default function OurServices() {
@@ -77,7 +66,6 @@ export default function OurServices() {
         <Container>
           <Typography
             variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
-            align="center"
             color="white"
             fontWeight={600}
           >
@@ -85,76 +73,116 @@ export default function OurServices() {
           </Typography>
 
           <CardsContainer>
-            {/* AC PIPING AND INSULATION */}
-
             <Card elevation={1}>
-              <AcUnit color="primary" sx={{ fontSize: "5rem" }} />
-
-              <TextContainer>
-                <Typography variant="h6" align="center" fontWeight={600}>
-                  AC PIPING AND INSULATION
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  fontWeight={600}
-                  sx={{
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  In AC systems, insulation is needed to protect against
-                  condensation. Therefore, we provide services to make sure that
-                  the piping is properly done and insulated.
-                </Typography>
-              </TextContainer>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Thermostat installation
+              </Typography>
             </Card>
 
-            {/* DUCT WORK */}
-
             <Card elevation={1}>
-              <Engineering color="primary" sx={{ fontSize: "5rem" }} />
-
-              <TextContainer>
-                <Typography variant="h6" align="center" fontWeight={600}>
-                  DUCT WORK
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  fontWeight={600}
-                  sx={{
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  A ductwork distributes airflow from your HVAC equipment to
-                  your entire home or commercial building. We provide services
-                  to set up an effecient duct work system for you.
-                </Typography>
-              </TextContainer>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                AC installation
+              </Typography>
             </Card>
 
-            {/* DESIGNING AND COMMISSIONING */}
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Heating system installation
+              </Typography>
+            </Card>
 
             <Card elevation={1}>
-              <DesignServices color="primary" sx={{ fontSize: "5rem" }} />
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Duct and vent installation
+              </Typography>
+            </Card>
 
-              <TextContainer>
-                <Typography variant="h6" align="center" fontWeight={600}>
-                  DESIGNING AND COMMISSIONING
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  fontWeight={600}
-                  sx={{
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  We also provide large scale designing and commissioning
-                  services with proper strategies to build an effecient HVAC
-                  system.
-                </Typography>
-              </TextContainer>
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Ductless HVAC services
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                AC system maintenance
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Heating system maintenance
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                HVAC system maintenance
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Duct work
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Thermostat repair
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Heating system repair
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                AC system repair
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Duct and vent repair
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                HVAC repair
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Home AC services
+              </Typography>
+            </Card>
+
+            <Card elevation={1}>
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                Commercial building contracts
+              </Typography>
             </Card>
           </CardsContainer>
         </Container>

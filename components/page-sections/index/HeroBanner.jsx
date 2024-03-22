@@ -32,13 +32,13 @@ const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
+  justifyContent: "space-between",
   alignItems: "center",
   padding: "0rem 2rem 0rem 2rem",
   width: "100%",
   height: "100%",
   backgroundColor: "rgba(0, 0, 0, 0.75)",
-  //   backdropFilter: "blur(1rem)",
+  backdropFilter: "blur(0.25rem)",
   zIndex: 1,
   gap: "2rem",
 }));
@@ -50,6 +50,11 @@ const ButtonContainer = styled("div")(({ theme }) => ({
   alignItems: "center",
   width: "100%",
   gap: "1rem",
+}));
+
+const CustomImg = styled("img")(({ theme }) => ({
+  width: "5rem",
+  height: "4rem",
 }));
 
 /* Copyright */
@@ -74,21 +79,25 @@ export default function HeroBanner() {
     <React.Fragment>
       <RootDiv>
         <Overlay>
-          <Typography
-            variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
-            align="center"
-          >
-            Hisham A. A. Boodai Trading Est.
-          </Typography>
+          <br />
 
           <ButtonContainer>
+            <Typography
+              variant={
+                useMediaQuery(theme.breakpoints.down("sm")) ? "h5" : "h3"
+              }
+              align="center"
+              sx={{ margin: "0rem 0rem 2rem 0rem" }}
+            >
+              Boodai Air Conditioning Contractors
+            </Typography>
             <Typography
               variant={
                 useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "h6"
               }
               align="center"
             >
-              Boodai for Air Conditioning Projects Division
+              All your HVAC needs under one roof
             </Typography>
 
             <Button
@@ -97,23 +106,33 @@ export default function HeroBanner() {
               disableRipple
               variant="contained"
               color="primary"
-              onClick={()=>{
-                  const isBrowser = typeof window !== `undefined`;
-                  if (isBrowser) {
-                    scrollTo({
-                      top: 650,
-                      behavior: "smooth",
-                    });
-                  }
+              onClick={() => {
+                const isBrowser = typeof window !== `undefined`;
+                if (isBrowser) {
+                  scrollTo({
+                    top: 650,
+                    behavior: "smooth",
+                  });
+                }
               }}
             >
               Know more
             </Button>
-
-            <ArrowDownward color="primary" sx={{
-              float: "bottom"
-            }} />
           </ButtonContainer>
+          <CustomImg
+            src="/images/scroll-down.gif"
+            alt="scroll down"
+            referrerPolicy="no-referrer"
+            onClick={() => {
+              const isBrowser = typeof window !== `undefined`;
+              if (isBrowser) {
+                scrollTo({
+                  top: 650,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          />
         </Overlay>
       </RootDiv>
     </React.Fragment>

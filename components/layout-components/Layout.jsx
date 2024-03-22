@@ -101,6 +101,8 @@ const Layout = ({
 }) => {
   const theme = useTheme();
 
+  const currentYear = new Date().getFullYear();
+
   /* Go to top */
 
   const [visible, setVisible] = React.useState(false);
@@ -230,7 +232,8 @@ const Layout = ({
               </LogoContainer>
 
               <CustomLink
-                href="/index-arabic"
+                href="/"
+                locale="ar"
                 rel="noopener"
                 target="_self"
                 referrerPolicy="no-referrer"
@@ -260,6 +263,8 @@ const Layout = ({
           </CustomFab>
         </FabContainer>
 
+        {/* Main Content */}
+
         {children && noContain ? (
           React.Children.map(children, (child, key) =>
             noContain?.includes(key) ? (
@@ -281,6 +286,22 @@ const Layout = ({
             <Container noContain={false}>{children}</Container>
           </React.Fragment>
         )}
+
+        {/* Footer */}
+
+        <Typography
+          variant="body2"
+          color="white"
+          align="center"
+          sx={{
+            padding: "1rem 0rem 1rem 0rem",
+            background: theme.palette.secondary.main,
+          }}
+        >
+          {"© " +
+            currentYear +
+            " Boodai Air Conditioning. All Rights Reserved."}
+        </Typography>
       </div>
     </React.Fragment>
   );

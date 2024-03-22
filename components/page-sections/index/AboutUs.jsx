@@ -14,7 +14,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "2rem 1.5rem 3rem 1.5rem",
+  padding: "2rem 1.5rem 3.5rem 1.5rem",
   gap: "1.5rem",
 }));
 
@@ -28,11 +28,11 @@ const ContentContainer = styled("div")(({ theme }) => ({
 }));
 
 const CustomImg = styled("img")(({ theme }) => ({
-  width: "50rem",
+  width: "100%",
   height: "30rem",
   borderRadius: "1rem",
-  [theme.breakpoints.down("md")]: { width: "40rem", height: "22rem" },
-  [theme.breakpoints.down("sm")]: { width: "20rem", height: "12rem" },
+  [theme.breakpoints.down("md")]: { height: "20rem" },
+  [theme.breakpoints.down("sm")]: { height: "10rem" },
 }));
 
 export default function AboutUs() {
@@ -66,7 +66,7 @@ export default function AboutUs() {
         </ContentContainer>
 
         <CustomImg
-          src="/images/banner.jpg"
+          src="/images/about-us.jpg"
           alt="about-us"
           referrerPolicy="no-referrer"
         />

@@ -15,7 +15,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "3rem 1.5rem 3rem 1.5rem",
+  padding: "0rem 1.5rem 3rem 1.5rem",
   gap: "1rem",
   background: "linear-gradient(to right, #141e30, #243b55)",
 }));
@@ -28,7 +28,7 @@ export default function GotAnyQuestions() {
       <RootDiv>
         <Container>
           <Typography
-            variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
+            variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h5" : "h4"}
             align="center"
             color="white"
             fontWeight={600}
@@ -51,7 +51,7 @@ export default function GotAnyQuestions() {
             variant="contained"
             color="primary"
             size="large"
-            href="/contact"
+            href="#contact-us"
             sx={{
               color: theme.palette.primary.main,
               backgroundColor: "white",

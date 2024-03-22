@@ -18,7 +18,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "row",
   justifyContent: "center",
   alignItems: "flex-start",
-  padding: "2rem 1.5rem 2rem 1.5rem",
+  padding: "3rem 1.5rem 2rem 1.5rem",
   gap: "1.5rem",
   [theme.breakpoints.down("sm")]: { flexDirection: "column" },
 }));

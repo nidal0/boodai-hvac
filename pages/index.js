@@ -12,14 +12,14 @@ import ContactUs from "@/components/page-sections/index/ContactUs";
 
 export default function Home() {
   return (
-    <Layout noContain={[0, 2, 4, 6]}>
+    <Layout noContain={[0, 2, 3, 4, 6]}>
       <HeroBanner index={0} />
       <AboutUs index={1} />
       <OurServices index={2} />
-      <OurWorkEthics index={3} />
       <GotAnyQuestions index={4} />
-      <OurPartners index={5} />
-      <OurPortfolio index={6} />
+      <OurWorkEthics index={4} />
+      <OurPortfolio index={5} />
+      <OurPartners index={6} />
       <ContactUs index={7} />
     </Layout>
   );

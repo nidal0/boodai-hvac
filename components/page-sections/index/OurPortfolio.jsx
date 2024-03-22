@@ -21,7 +21,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "2rem 1.5rem 3rem 1.5rem",
+  padding: "2rem 1.5rem 2rem 1.5rem",
   gap: "1.5rem",
 }));
 
@@ -34,24 +34,23 @@ const ContentContainer = styled("div")(({ theme }) => ({
   gap: "0.5rem",
 }));
 
-const CustomImg = styled("img")(({ theme }) => ({
-  width: "50rem",
-  height: "30rem",
-  borderRadius: "1rem",
-  [theme.breakpoints.down("md")]: { width: "40rem", height: "22rem" },
-  [theme.breakpoints.down("sm")]: { width: "20rem", height: "12rem" },
-}));
-
 export default function OurPortfolio() {
   const theme = useTheme();
 
   const photos = [
-    { src: "/images/portfolio/1.jpg", width: 200, height: 300 },
-    { src: "/images/portfolio/2.JPG", width: 100, height: 200 },
-    { src: "/images/portfolio/3.jpg", width: 1600, height: 900 },
-    { src: "/images/portfolio/4.jpg", width: 1600, height: 900 },
-    { src: "/images/portfolio/5.jpg", width: 1600, height: 900 },
-    { src: "/images/portfolio/6.jpg", width: 1600, height: 900 },
+    { src: "/images/portfolio/1.jpg", width: 1200, height: 1600 },
+    { src: "/images/portfolio/2.JPG", width: 3940, height: 2580 },
+    { src: "/images/portfolio/3.jpg", width: 960, height: 1280 },
+    { src: "/images/portfolio/4.jpg", width: 1280, height: 960 },
+    { src: "/images/portfolio/5.jpg", width: 1134, height: 1280 },
+    { src: "/images/portfolio/6.jpg", width: 757, height: 1164 },
+    { src: "/images/portfolio/7.jpg", width: 959, height: 1160 },
+    { src: "/images/portfolio/8.jpg", width: 1200, height: 1163 },
+    { src: "/images/portfolio/9.jpg", width: 1024, height: 768 },
+    { src: "/images/portfolio/10.jpg", width: 1600, height: 1200 },
+    { src: "/images/portfolio/11.jpg", width: 1024, height: 768 },
+    { src: "/images/portfolio/12.jpg", width: 832, height: 460 },
+    { src: "/images/portfolio/13.jpg", width: 2047, height: 1356 },
   ];
 
   const [index, setIndex] = React.useState(-1);
@@ -84,7 +83,10 @@ export default function OurPortfolio() {
         <PhotoAlbum
           layout="rows"
           photos={photos}
-          // targetRowHeight={150}
+          rowConstraints={{
+            minPhotos: useMediaQuery(theme.breakpoints.down("sm")) ? 2 : 4,
+            maxPhotos: 6,
+          }}
           onClick={({ index }) => setIndex(index)}
           renderContainer={({ containerRef, containerProps, children }) => (
             <div
@@ -95,13 +97,6 @@ export default function OurPortfolio() {
               {children}
             </div>
           )}
-          // renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
-          //   <CustomImg
-          //     src="/images/banner.jpg"
-          //     alt="about-us"
-          //     referrerPolicy="no-referrer"
-          //   />
-          // )}
         />
         <Lightbox
           slides={photos}
