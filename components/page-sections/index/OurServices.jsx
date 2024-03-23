@@ -174,7 +174,7 @@ export default function OurServices() {
             <Card elevation={1}>
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Home AC services
+                Home appliance service
               </Typography>
             </Card>
 

@@ -20,7 +20,7 @@ const RootDiv = styled("div")(({ theme }) => ({
   background: "linear-gradient(to right, #141e30, #243b55)",
 }));
 
-export default function GotAnyQuestions() {
+export default function GotAnyQuestions({ locale }) {
   const theme = useTheme();
 
   return (
@@ -33,7 +33,7 @@ export default function GotAnyQuestions() {
             color="white"
             fontWeight={600}
           >
-            Got any questions?
+            {locale === "en" ? "Got any questions?" : "هل لديك أي أسئلة؟"}
           </Typography>
 
           <Typography
@@ -44,7 +44,7 @@ export default function GotAnyQuestions() {
             color="white"
             fontWeight={600}
           >
-            We are here to help
+            {locale === "en" ? "We are here to help" : "نحن هنا للمساعدة"}
           </Typography>
 
           <Button
@@ -62,7 +62,7 @@ export default function GotAnyQuestions() {
               },
             }}
           >
-            GET IN TOUCH
+            {locale === "en" ? "GET IN TOUCH" : "تواصل معنا"}
           </Button>
         </Container>
       </RootDiv>

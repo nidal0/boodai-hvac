@@ -208,7 +208,7 @@ export default function OurWorkEthics() {
                       color: theme.palette.text.secondary,
                     }}
                   >
-                    Constant communication and support with clients
+                    Customer support both before and after the project.
                   </Typography>
                 </IconText>
               </ContactContainer>

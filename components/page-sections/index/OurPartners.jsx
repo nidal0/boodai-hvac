@@ -52,7 +52,7 @@ const CustomImg = styled("img")(({ theme }) => ({
   height: "6rem",
 }));
 
-export default function OurPartners() {
+export default function OurPartners({ locale }) {
   const theme = useTheme();
 
   return (
@@ -65,7 +65,7 @@ export default function OurPartners() {
             color="primary"
             fontWeight={600}
           >
-            Our Sourcing Partners
+            {locale === "en" ? "Our Sourcing Partners" : "شركاؤنا في التوريد"}
           </Typography>
           <Typography
             variant={
@@ -76,11 +76,17 @@ export default function OurPartners() {
               color: theme.palette.text.primary,
             }}
           >
-            We source our products from top HVAC brands.
+            {locale === "en"
+              ? "We source our products from top HVAC brands."
+              : "نحن نحصل على منتجاتنا من أفضل العلامات التجارية للتكييف والتبريد."}
           </Typography>
         </ContentContainer>
 
-        <LogosContainer>
+        <LogosContainer
+          sx={{
+            flexDirection: locale === "en" ? "row" : "row-reverse",
+          }}
+        >
           <CustomImg
             src="/images/partners/gree.png"
             alt="Gree"

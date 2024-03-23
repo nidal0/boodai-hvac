@@ -57,22 +57,7 @@ const CustomImg = styled("img")(({ theme }) => ({
   height: "4rem",
 }));
 
-/* Copyright */
-
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center">
-//       {"Copyright © "}
-//       <Link color="inherit" href="#">
-//         Mahala Almas
-//       </Link>{" "}
-//       {new Date().getFullYear()}
-//       {"."}
-//     </Typography>
-//   );
-// }
-
-export default function HeroBanner() {
+export default function HeroBanner({ locale }) {
   const theme = useTheme();
 
   return (
@@ -89,7 +74,9 @@ export default function HeroBanner() {
               align="center"
               sx={{ margin: "0rem 0rem 2rem 0rem" }}
             >
-              Boodai Air Conditioning Contractors
+              {locale === "en"
+                ? "Boodai Air Conditioning Contractors"
+                : " بودي للمقاولات لتكييف الهواء"}
             </Typography>
             <Typography
               variant={
@@ -97,7 +84,9 @@ export default function HeroBanner() {
               }
               align="center"
             >
-              All your HVAC needs under one roof
+              {locale === "en"
+                ? "All your HVAC needs under one roof"
+                : "جميع احتياجاتك من HVAC تحت سقف واحد"}
             </Typography>
 
             <Button
@@ -116,7 +105,7 @@ export default function HeroBanner() {
                 }
               }}
             >
-              Know more
+              {locale == "en" ? "Know more" : "اعرف أكثر"}
             </Button>
           </ButtonContainer>
           <CustomImg

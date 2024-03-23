@@ -34,7 +34,7 @@ const ContentContainer = styled("div")(({ theme }) => ({
   gap: "0.5rem",
 }));
 
-export default function OurPortfolio() {
+export default function OurPortfolio({ locale }) {
   const theme = useTheme();
 
   const photos = [
@@ -65,7 +65,7 @@ export default function OurPortfolio() {
             color="primary"
             fontWeight={600}
           >
-            Our Portfolio
+            {locale === "en" ? "Our Portfolio" : "معرض الأعمال"}
           </Typography>
           <Typography
             variant={
@@ -76,8 +76,9 @@ export default function OurPortfolio() {
               color: theme.palette.text.primary,
             }}
           >
-            Seeing is believing. Take a look at our portfolio to see the quality
-            of our work.
+            {locale === "en"
+              ? 'Seeing is believing. Take a look at our portfolio to see the quality of our work." "'
+              : "الرؤية تصنع الإيمان. تصفح معرض أعمالنا لترى جودة عملنا."}
           </Typography>
         </ContentContainer>
         <PhotoAlbum
