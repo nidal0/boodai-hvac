@@ -55,7 +55,7 @@ const ButtonContainer = styled("div")(({ theme }) => ({
 const CustomImg = styled("img")(({ theme }) => ({
   width: "5rem",
   height: "4rem",
-  margin: "0rem 0rem 2rem 0rem",
+  margin: "0rem 0rem 4rem 0rem",
 }));
 
 export default function HeroBanner({ locale }) {
