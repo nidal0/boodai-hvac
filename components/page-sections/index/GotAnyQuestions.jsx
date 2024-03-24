@@ -20,6 +20,15 @@ const RootDiv = styled("div")(({ theme }) => ({
   background: "linear-gradient(to right, #141e30, #243b55)",
 }));
 
+const ContentContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  gap: "0.5rem",
+}));
+
 export default function GotAnyQuestions({ locale }) {
   const theme = useTheme();
 
@@ -27,43 +36,47 @@ export default function GotAnyQuestions({ locale }) {
     <React.Fragment>
       <RootDiv>
         <Container>
-          <Typography
-            variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h5" : "h4"}
-            align="center"
-            color="white"
-            fontWeight={600}
-          >
-            {locale === "en" ? "Got any questions?" : "هل لديك أي أسئلة؟"}
-          </Typography>
+          <ContentContainer>
+            <Typography
+              variant={
+                useMediaQuery(theme.breakpoints.down("sm")) ? "h5" : "h4"
+              }
+              align="center"
+              color="white"
+              fontWeight={600}
+            >
+              {locale === "en" ? "Got any questions?" : "هل لديك أي أسئلة؟"}
+            </Typography>
 
-          <Typography
-            variant={
-              useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "h6"
-            }
-            align="center"
-            color="white"
-            fontWeight={600}
-          >
-            {locale === "en" ? "We are here to help" : "نحن هنا للمساعدة"}
-          </Typography>
+            <Typography
+              variant={
+                useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "h6"
+              }
+              align="center"
+              color="white"
+              fontWeight={600}
+            >
+              {locale === "en" ? "We are here to help" : "نحن هنا للمساعدة"}
+            </Typography>
 
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            href="#contact-us"
-            sx={{
-              color: theme.palette.primary.main,
-              backgroundColor: "white",
-              borderRadius: "0rem",
-              fontWeight: 600,
-              "&:hover": {
-                backgroundColor: theme.palette.background.dim,
-              },
-            }}
-          >
-            {locale === "en" ? "GET IN TOUCH" : "تواصل معنا"}
-          </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              href="#contact-us"
+              sx={{
+                color: theme.palette.primary.main,
+                backgroundColor: "white",
+                borderRadius: "0rem",
+                fontWeight: 600,
+                "&:hover": {
+                  backgroundColor: theme.palette.background.dim,
+                },
+              }}
+            >
+              {locale === "en" ? "GET IN TOUCH" : "تواصل معنا"}
+            </Button>
+          </ContentContainer>
         </Container>
       </RootDiv>
     </React.Fragment>

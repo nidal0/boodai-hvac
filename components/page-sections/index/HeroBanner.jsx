@@ -38,7 +38,7 @@ const Overlay = styled("div")(({ theme }) => ({
   width: "100%",
   height: "100%",
   backgroundColor: "rgba(0, 0, 0, 0.75)",
-  backdropFilter: "blur(0.25rem)",
+  // backdropFilter: "blur(0.05rem)",
   zIndex: 1,
   gap: "2rem",
 }));
@@ -55,6 +55,7 @@ const ButtonContainer = styled("div")(({ theme }) => ({
 const CustomImg = styled("img")(({ theme }) => ({
   width: "5rem",
   height: "4rem",
+  margin: "0rem 0rem 2rem 0rem",
 }));
 
 export default function HeroBanner({ locale }) {

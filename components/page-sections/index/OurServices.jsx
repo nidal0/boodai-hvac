@@ -19,7 +19,8 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "3rem 1.5rem 3rem 1.5rem",
+  padding: "3rem 0rem 3rem 0rem",
+  width: "100%",
   gap: "2rem",
   // backgroundColor: theme.palette.background.dim,
   background: "linear-gradient(to right, #141e30, #243b55)",
@@ -57,7 +58,7 @@ const Card = styled(Paper)(({ theme }) => ({
   },
 }));
 
-export default function OurServices() {
+export default function OurServices({ locale }) {
   const theme = useTheme();
 
   return (
@@ -68,120 +69,225 @@ export default function OurServices() {
             variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
             color="white"
             fontWeight={600}
+            align="center"
           >
-            Our Services
+            {locale === "en" ? "Our Services" : "خدماتنا"}
           </Typography>
 
           <CardsContainer>
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Thermostat installation
+                {locale === "en"
+                  ? "Thermostat installation"
+                  : "تركيب الثرموستات"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                AC installation
+                {locale === "en" ? "AC installation" : "تركيب مكيف الهواء"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Heating system installation
+                {locale === "en"
+                  ? "Heating system installation"
+                  : "تركيب نظام التدفئة"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Duct and vent installation
+                {locale === "en"
+                  ? "Duct and vent installation"
+                  : "تركيب القناة والمنفذ"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Ductless HVAC services
+                {locale === "en"
+                  ? "Ductless HVAC services"
+                  : "خدمات HVAC بدون قناة"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                AC system maintenance
+                {locale === "en"
+                  ? "AC system maintenance"
+                  : "صيانة نظام تكييف الهواء"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Heating system maintenance
+                {locale === "en"
+                  ? "Heating system maintenance"
+                  : "صيانة نظام التدفئة"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                HVAC system maintenance
+                {locale === "en"
+                  ? "HVAC system maintenance"
+                  : "صيانة نظام HVAC"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Duct work
+                {locale === "en" ? "Duct work" : "عمل القناة"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Thermostat repair
+                {locale === "en" ? "Thermostat repair" : "إصلاح الثرموستات"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Heating system repair
+                {locale === "en"
+                  ? "Heating system repair"
+                  : "إصلاح نظام التدفئة"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                AC system repair
+                {locale === "en"
+                  ? "AC system repair"
+                  : "إصلاح نظام تكييف الهواء"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Duct and vent repair
+                {locale === "en"
+                  ? "Duct and vent repair"
+                  : "إصلاح القناة والمنفذ"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                HVAC repair
+                {locale === "en" ? "HVAC repair" : "إصلاح HVAC"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Home appliance service
+                {locale === "en"
+                  ? "Home appliance service"
+                  : "خدمة الأجهزة المنزلية"}
               </Typography>
             </Card>
 
-            <Card elevation={1}>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
               <Typography variant="body1" fontWeight={600}>
-                Commercial building contracts
+                {locale === "en"
+                  ? "Commercial building contracts"
+                  : "عقود البناء التجاري"}
               </Typography>
             </Card>
           </CardsContainer>

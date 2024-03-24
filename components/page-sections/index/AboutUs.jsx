@@ -61,12 +61,12 @@ export default function AboutUs({ locale }) {
           >
             {locale === "en"
               ? "We started out in the year 1995 and have shown stable growth over the years thanks to our esteemed clients. With around 30 years of experience in the industry and a team of highly skilled professionals, we are dedicated to providing the best services to our clients. We also have a wide range of products and services to cater to the varied requirements of our clients."
-              : "بدأنا في عام 1995 وقد أظهرنا نموًا مستقرًا على مر السنين بفضل عملائنا الكرام. بفضل خبرتنا التي تزيد عن 30 عامًا في الصناعة وفريق من المحترفين ذوي المهارات العالية، نحن ملتزمون بتقديم أفضل الخدمات لعملائنا. لدينا أيضًا مجموعة واسعة من المنتجات والخدمات لتلبية متطلبات عملائنا المتنوعة."}
+              : "بدأنا في عام 1995 وقد أظهرنا نموًا مستقرًا على مر السنين بفضل عملائنا الكرام. بفضل خبرتنا التي تزيد عن 30 عامًا في الصناعة وفريق من المحترفين ذوي المهارات العالية، نحن ملتزمون بتقديم أفضل الخدمات لعملائنا. لدينا أيضًا مجموعة واسعة من المنتجات والخدمات لتلبية متطلبات عملائنا المتنوعة"}
           </Typography>
         </ContentContainer>
 
         <CustomImg
-          src="/images/about-us.jpg"
+          src="/images/about-us.JPG"
           alt="about-us"
           referrerPolicy="no-referrer"
         />

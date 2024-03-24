@@ -76,7 +76,7 @@ const CustomImg = styled("img")(({ theme }) => ({
   [theme.breakpoints.down("sm")]: { width: "20rem", height: "25rem" },
 }));
 
-export default function OurWorkEthics() {
+export default function OurWorkEthics({ locale }) {
   const theme = useTheme();
 
   return (
@@ -89,11 +89,19 @@ export default function OurWorkEthics() {
             color="primary"
             fontWeight={600}
           >
-            Our Work Ethics
+            {locale === "en" ? "Our Work Ethics" : "أخلاقيات عملنا"}
           </Typography>
 
-          <InnerDiv>
-            <ContentContainer>
+          <InnerDiv
+            sx={{
+              flexDirection: locale === "en" ? "row" : "row-reverse",
+            }}
+          >
+            <ContentContainer
+              sx={{
+                alignItems: locale === "en" ? "flex-start" : "flex-end",
+              }}
+            >
               <Typography
                 variant={
                   useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "h6"
@@ -101,18 +109,29 @@ export default function OurWorkEthics() {
                 align={
                   useMediaQuery(theme.breakpoints.down("sm"))
                     ? "center"
-                    : "left"
+                    : locale === "en"
+                      ? "left"
+                      : "right"
                 }
                 sx={{
                   color: theme.palette.text.primary,
                 }}
               >
-                We are committed to providing the best quality services to our
-                clients and this is reflected in our work ethics.
+                {locale === "en"
+                  ? "We are committed to providing the best quality services to our clients and this is reflected in our work ethics."
+                  : "نحن ملتزمون بتقديم أفضل خدمات الجودة لعملائنا ويتجلى ذلك في أخلاقيات عملنا"}
               </Typography>
 
-              <ContactContainer>
-                <IconText>
+              <ContactContainer
+                sx={{
+                  alignItems: locale === "en" ? "flex-start" : "flex-end",
+                }}
+              >
+                <IconText
+                  sx={{
+                    flexDirection: locale === "en" ? "row" : "row-reverse",
+                  }}
+                >
                   <Star
                     color="primary"
                     sx={{
@@ -133,11 +152,17 @@ export default function OurWorkEthics() {
                       color: theme.palette.text.secondary,
                     }}
                   >
-                    Working efficiently to meet project deadlines.
+                    {locale === "en"
+                      ? "Working efficiently to meet project deadlines."
+                      : "العمل بكفاءة لتلبية المواعيد النهائية للمشروع"}
                   </Typography>
                 </IconText>
 
-                <IconText>
+                <IconText
+                  sx={{
+                    flexDirection: locale === "en" ? "row" : "row-reverse",
+                  }}
+                >
                   <Star
                     color="primary"
                     sx={{
@@ -158,11 +183,17 @@ export default function OurWorkEthics() {
                       color: theme.palette.text.secondary,
                     }}
                   >
-                    Providing sufficient manpower and resources.
+                    {locale === "en"
+                      ? "Providing sufficient manpower and resources."
+                      : "توفير القوى العاملة والموارد الكافية"}
                   </Typography>
                 </IconText>
 
-                <IconText>
+                <IconText
+                  sx={{
+                    flexDirection: locale === "en" ? "row" : "row-reverse",
+                  }}
+                >
                   <Star
                     color="primary"
                     sx={{
@@ -183,11 +214,17 @@ export default function OurWorkEthics() {
                       color: theme.palette.text.secondary,
                     }}
                   >
-                    Being responsible and accountable for our work.
+                    {locale === "en"
+                      ? "Being responsible and accountable for our work."
+                      : "تحمل المسؤولية والمساءلة عن عملنا"}
                   </Typography>
                 </IconText>
 
-                <IconText sx={{ gap: "0.35rem" }}>
+                <IconText
+                  sx={{
+                    flexDirection: locale === "en" ? "row" : "row-reverse",
+                  }}
+                >
                   <Star
                     color="primary"
                     sx={{
@@ -208,7 +245,9 @@ export default function OurWorkEthics() {
                       color: theme.palette.text.secondary,
                     }}
                   >
-                    Customer support both before and after the project.
+                    {locale === "en"
+                      ? "Customer support both before and after the project."
+                      : "دعم العملاء قبل وبعد المشروع"}
                   </Typography>
                 </IconText>
               </ContactContainer>

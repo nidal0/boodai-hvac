@@ -78,7 +78,7 @@ export default function OurPartners({ locale }) {
           >
             {locale === "en"
               ? "We source our products from top HVAC brands."
-              : "نحن نحصل على منتجاتنا من أفضل العلامات التجارية للتكييف والتبريد."}
+              : "نحن نحصل على منتجاتنا من أفضل العلامات التجارية للتكييف والتبريد"}
           </Typography>
         </ContentContainer>
 

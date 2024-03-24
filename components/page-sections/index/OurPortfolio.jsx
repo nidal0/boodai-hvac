@@ -50,7 +50,7 @@ export default function OurPortfolio({ locale }) {
     { src: "/images/portfolio/10.jpg", width: 1600, height: 1200 },
     { src: "/images/portfolio/11.jpg", width: 1024, height: 768 },
     { src: "/images/portfolio/12.jpg", width: 832, height: 460 },
-    { src: "/images/portfolio/13.jpg", width: 2047, height: 1356 },
+    { src: "/images/portfolio/13.JPG", width: 2047, height: 1356 },
   ];
 
   const [index, setIndex] = React.useState(-1);
@@ -77,8 +77,8 @@ export default function OurPortfolio({ locale }) {
             }}
           >
             {locale === "en"
-              ? 'Seeing is believing. Take a look at our portfolio to see the quality of our work." "'
-              : "الرؤية تصنع الإيمان. تصفح معرض أعمالنا لترى جودة عملنا."}
+              ? "Seeing is believing. Take a look at our portfolio to see the quality of our work"
+              : "الرؤية تصنع الإيمان. تصفح معرض أعمالنا لترى جودة عملنا"}
           </Typography>
         </ContentContainer>
         <PhotoAlbum

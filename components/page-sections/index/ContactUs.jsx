@@ -72,37 +72,55 @@ const CustomIframe = styled("iframe")(({ theme }) => ({
   [theme.breakpoints.down("sm")]: { width: "100%", height: "12rem" },
 }));
 
-export default function ContactUs() {
+export default function ContactUs({ locale }) {
   const theme = useTheme();
 
   return (
     <React.Fragment>
-      <RootDiv id="contact-us">
-        <ContentContainer>
+      <RootDiv
+        id="contact-us"
+        sx={{
+          flexDirection: locale === "en" ? "row" : "row-reverse",
+        }}
+      >
+        <ContentContainer
+          sx={{
+            alignItems: locale === "en" ? "flex-start" : "flex-end",
+          }}
+        >
           <Typography
             variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
             align="center"
             color="primary"
             fontWeight={600}
           >
-            Contact Us
+            {locale === "en" ? "Contact Us" : "اتصل بنا"}
           </Typography>
           <Typography
             variant={
               useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "body1"
             }
-            // align="center"
             sx={{
               color: theme.palette.text.primary,
             }}
           >
-            Do you have any queries? Get in touch with us right away!
+            {locale === "en"
+              ? "Do you have any queries? Get in touch with us right away!"
+              : "هل لديك أي استفسارات؟ تواصل معنا على الفور!"}
           </Typography>
 
-          <ContactContainer>
+          <ContactContainer
+            sx={{
+              alignItems: locale === "en" ? "flex-start" : "flex-end",
+            }}
+          >
             {/* Phone */}
 
-            <IconText>
+            <IconText
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <Phone color="primary" sx={{ fontSize: "1.25rem" }} />
               <CustomLink
                 href="tel:+966501900828"
@@ -116,7 +134,11 @@ export default function ContactUs() {
 
             {/* Email */}
 
-            <IconText>
+            <IconText
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <Email color="primary" sx={{ fontSize: "1.25rem" }} />
               <CustomLink
                 href="mailto:boodaiaircon@gmail.com"
@@ -130,15 +152,23 @@ export default function ContactUs() {
 
             {/* Address */}
 
-            <IconText sx={{ gap: "0.35rem" }}>
+            <IconText
+              sx={{
+                gap: "0.35rem",
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
               <Place color="primary" sx={{ fontSize: "1.5rem" }} />
               <CustomLink
                 href="https://maps.app.goo.gl/dLK21aVY2cdiG3mn7"
                 rel="noopener"
                 target="_blank"
                 referrerPolicy="no-referrer"
+                align={locale === "en" ? "left" : "right"}
               >
-                Al-Khaldiya, Al Ahsa 31982, Kingdom of Saudi Arabia
+                {locale === "en"
+                  ? "Al-Khaldiya, Al Ahsa 31982, Kingdom of Saudi Arabia"
+                  : "الخالدية، الأحساء 31982، المملكة العربية السعودية"}
               </CustomLink>
             </IconText>
           </ContactContainer>
