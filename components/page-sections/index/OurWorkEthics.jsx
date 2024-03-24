@@ -36,7 +36,10 @@ const InnerDiv = styled("div")(({ theme }) => ({
   justifyContent: "center",
   alignItems: "flex-start",
   gap: "1.5rem",
-  [theme.breakpoints.down("sm")]: { flexDirection: "column" },
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
 }));
 
 const ContentContainer = styled("div")(({ theme }) => ({
@@ -74,6 +77,7 @@ const CustomImg = styled("img")(({ theme }) => ({
   borderRadius: "1rem",
   [theme.breakpoints.down("md")]: { width: "20rem", height: "33rem" },
   [theme.breakpoints.down("sm")]: { width: "20rem", height: "25rem" },
+  [theme.breakpoints.down("xs")]: { width: "15rem", height: "20rem" },
 }));
 
 export default function OurWorkEthics({ locale }) {
@@ -151,6 +155,7 @@ export default function OurWorkEthics({ locale }) {
                     sx={{
                       color: theme.palette.text.secondary,
                     }}
+                    align={locale === "en" ? "left" : "right"}
                   >
                     {locale === "en"
                       ? "Working efficiently to meet project deadlines."
@@ -182,6 +187,7 @@ export default function OurWorkEthics({ locale }) {
                     sx={{
                       color: theme.palette.text.secondary,
                     }}
+                    align={locale === "en" ? "left" : "right"}
                   >
                     {locale === "en"
                       ? "Providing sufficient manpower and resources."
@@ -213,6 +219,7 @@ export default function OurWorkEthics({ locale }) {
                     sx={{
                       color: theme.palette.text.secondary,
                     }}
+                    align={locale === "en" ? "left" : "right"}
                   >
                     {locale === "en"
                       ? "Being responsible and accountable for our work."
@@ -244,6 +251,7 @@ export default function OurWorkEthics({ locale }) {
                     sx={{
                       color: theme.palette.text.secondary,
                     }}
+                    align={locale === "en" ? "left" : "right"}
                   >
                     {locale === "en"
                       ? "Customer support both before and after the project."

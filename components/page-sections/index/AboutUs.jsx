@@ -33,6 +33,7 @@ const CustomImg = styled("img")(({ theme }) => ({
   borderRadius: "1rem",
   [theme.breakpoints.down("md")]: { height: "20rem" },
   [theme.breakpoints.down("sm")]: { height: "10rem" },
+  [theme.breakpoints.down("xs")]: { height: "7.5rem" },
 }));
 
 export default function AboutUs({ locale }) {
