@@ -42,15 +42,18 @@ export default function OurPortfolio({ locale }) {
     { src: "/images/portfolio/2.JPG", width: 3940, height: 2580 },
     { src: "/images/portfolio/3.jpg", width: 960, height: 1280 },
     { src: "/images/portfolio/4.jpg", width: 1280, height: 960 },
-    // { src: "/images/portfolio/5.jpg", width: 1134, height: 1280 },
-    // { src: "/images/portfolio/6.jpg", width: 757, height: 1164 },
-    // { src: "/images/portfolio/7.jpg", width: 959, height: 1160 },
+    { src: "/images/portfolio/5.webp", width: 1134, height: 1280 },
+    { src: "/images/portfolio/6.webp", width: 757, height: 1164 },
+    { src: "/images/portfolio/7.webp", width: 959, height: 1160 },
     { src: "/images/portfolio/8.jpg", width: 1200, height: 1163 },
     { src: "/images/portfolio/9.jpg", width: 1024, height: 768 },
-    // { src: "/images/portfolio/10.jpg", width: 1600, height: 1200 },
-    // { src: "/images/portfolio/11.jpg", width: 1024, height: 768 },
+    { src: "/images/portfolio/10.webp", width: 1600, height: 1200 },
+    { src: "/images/portfolio/11.webp", width: 1024, height: 768 },
     { src: "/images/portfolio/12.jpg", width: 832, height: 460 },
     { src: "/images/portfolio/13.JPG", width: 2047, height: 1356 },
+    { src: "/images/portfolio/14.jpg", width: 1077, height: 531 },
+    { src: "/images/portfolio/15.jpg", width: 940, height: 525 },
+    { src: "/images/portfolio/16.jpg", width: 810, height: 1080 },
   ];
 
   const [index, setIndex] = React.useState(-1);
