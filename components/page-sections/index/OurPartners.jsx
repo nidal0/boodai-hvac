@@ -111,7 +111,6 @@ export default function OurPartners({ locale }) {
             referrerPolicy="no-referrer"
             sx={{ width: "6rem", height: "6rem" }}
           />
-
           <CustomImg
             src="/images/partners/lg.png"
             alt="LG"
@@ -122,6 +121,24 @@ export default function OurPartners({ locale }) {
             alt="Trane"
             referrerPolicy="no-referrer"
             sx={{ width: "13rem", height: "5rem" }}
+          />
+          <CustomImg
+            src="/images/partners/york.png"
+            alt="York"
+            referrerPolicy="no-referrer"
+            sx={{ width: "13rem", height: "3rem" }}
+          />
+          <CustomImg
+            src="/images/partners/haier.png"
+            alt="Haier"
+            referrerPolicy="no-referrer"
+            sx={{ width: "14rem", height: "6rem" }}
+          />
+          <CustomImg
+            src="/images/partners/general.png"
+            alt="General"
+            referrerPolicy="no-referrer"
+            sx={{ width: "23rem", height: "3rem" }}
           />
         </LogosContainer>
       </RootDiv>
