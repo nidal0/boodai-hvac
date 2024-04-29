@@ -10,7 +10,7 @@ import Container from "/components/layout-components/Container";
 
 /* Icon Imports */
 
-import { AcUnit, DesignServices, Engineering } from "@mui/icons-material";
+import { BuildOutlined } from "@mui/icons-material";
 
 /* Styled Components */
 
@@ -19,7 +19,8 @@ const RootDiv = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "3rem 1.5rem 5rem 1.5rem",
+  padding: "3rem 0rem 3rem 0rem",
+  width: "100%",
   gap: "2rem",
   // backgroundColor: theme.palette.background.dim,
   background: "linear-gradient(to right, #141e30, #243b55)",
@@ -42,33 +43,22 @@ const CardsContainer = styled("div")(({ theme }) => ({
 
 const Card = styled(Paper)(({ theme }) => ({
   display: "flex",
-  flexDirection: "column",
+  flexDirection: "row",
   justifyContent: "flex-start",
   alignItems: "center",
-  width: "28%",
-  height: "22.5rem",
-  gap: "2rem",
+  width: "48%",
+  gap: "0.75rem",
   borderRadius: "1rem",
-  padding: "2rem 1rem 2rem 1rem",
-  [theme.breakpoints.down("md")]: { width: "48%", height: "21rem" },
-  [theme.breakpoints.down("sm")]: { width: "100%", height: "23rem" },
-  // "&:hover": {
-  //   border: `0.5px solid ${theme.palette.primary.main}`,
-  //   transform: "scale(1.05)",
-  //   transition: "0.4s",
-  // },
+  padding: "1rem 1rem 1rem 1rem",
+  [theme.breakpoints.down("sm")]: { width: "100%" },
+  "&:hover": {
+    // border: `0.5px solid ${theme.palette.primary.main}`,
+    transform: "scale(1.05)",
+    transition: "0.4s",
+  },
 }));
 
-const TextContainer = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  gap: "0.25rem",
-}));
-
-export default function OurServices() {
+export default function OurServices({ locale }) {
   const theme = useTheme();
 
   return (
@@ -77,84 +67,228 @@ export default function OurServices() {
         <Container>
           <Typography
             variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
-            align="center"
             color="white"
             fontWeight={600}
+            align="center"
           >
-            Our Services
+            {locale === "en" ? "Our Services" : "خدماتنا"}
           </Typography>
 
           <CardsContainer>
-            {/* AC PIPING AND INSULATION */}
-
-            <Card elevation={1}>
-              <AcUnit color="primary" sx={{ fontSize: "5rem" }} />
-
-              <TextContainer>
-                <Typography variant="h6" align="center" fontWeight={600}>
-                  AC PIPING AND INSULATION
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  fontWeight={600}
-                  sx={{
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  In AC systems, insulation is needed to protect against
-                  condensation. Therefore, we provide services to make sure that
-                  the piping is properly done and insulated.
-                </Typography>
-              </TextContainer>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Thermostat installation"
+                  : "تركيب الثرموستات"}
+              </Typography>
             </Card>
 
-            {/* DUCT WORK */}
-
-            <Card elevation={1}>
-              <Engineering color="primary" sx={{ fontSize: "5rem" }} />
-
-              <TextContainer>
-                <Typography variant="h6" align="center" fontWeight={600}>
-                  DUCT WORK
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  fontWeight={600}
-                  sx={{
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  A ductwork distributes airflow from your HVAC equipment to
-                  your entire home or commercial building. We provide services
-                  to set up an effecient duct work system for you.
-                </Typography>
-              </TextContainer>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en" ? "AC installation" : "تركيب مكيف الهواء"}
+              </Typography>
             </Card>
 
-            {/* DESIGNING AND COMMISSIONING */}
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Heating system installation"
+                  : "تركيب نظام التدفئة"}
+              </Typography>
+            </Card>
 
-            <Card elevation={1}>
-              <DesignServices color="primary" sx={{ fontSize: "5rem" }} />
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Duct and vent installation"
+                  : "تركيب القناة والمنفذ"}
+              </Typography>
+            </Card>
 
-              <TextContainer>
-                <Typography variant="h6" align="center" fontWeight={600}>
-                  DESIGNING AND COMMISSIONING
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  fontWeight={600}
-                  sx={{
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  We also provide large scale designing and commissioning
-                  services with proper strategies to build an effecient HVAC
-                  system.
-                </Typography>
-              </TextContainer>
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Ductless HVAC services"
+                  : "خدمات HVAC بدون قناة"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "AC system maintenance"
+                  : "صيانة نظام تكييف الهواء"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Heating system maintenance"
+                  : "صيانة نظام التدفئة"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "HVAC system maintenance"
+                  : "صيانة نظام HVAC"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en" ? "Duct work" : "عمل القناة"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en" ? "Thermostat repair" : "إصلاح الثرموستات"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Heating system repair"
+                  : "إصلاح نظام التدفئة"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "AC system repair"
+                  : "إصلاح نظام تكييف الهواء"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Duct and vent repair"
+                  : "إصلاح القناة والمنفذ"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en" ? "HVAC repair" : "إصلاح HVAC"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Home appliance service"
+                  : "خدمة الأجهزة المنزلية"}
+              </Typography>
+            </Card>
+
+            <Card
+              elevation={1}
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <BuildOutlined color="primary" sx={{ fontSize: "1.5rem" }} />
+              <Typography variant="body1" fontWeight={600}>
+                {locale === "en"
+                  ? "Commercial building contracts"
+                  : "عقود البناء التجاري"}
+              </Typography>
             </Card>
           </CardsContainer>
         </Container>

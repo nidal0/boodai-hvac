@@ -32,13 +32,13 @@ const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
+  justifyContent: "space-between",
   alignItems: "center",
   padding: "0rem 2rem 0rem 2rem",
   width: "100%",
   height: "100%",
   backgroundColor: "rgba(0, 0, 0, 0.75)",
-  //   backdropFilter: "blur(1rem)",
+  // backdropFilter: "blur(0.05rem)",
   zIndex: 1,
   gap: "2rem",
 }));
@@ -52,43 +52,42 @@ const ButtonContainer = styled("div")(({ theme }) => ({
   gap: "1rem",
 }));
 
-/* Copyright */
+const CustomImg = styled("img")(({ theme }) => ({
+  width: "5rem",
+  height: "4rem",
+  margin: "0rem 0rem 4rem 0rem",
+}));
 
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center">
-//       {"Copyright © "}
-//       <Link color="inherit" href="#">
-//         Mahala Almas
-//       </Link>{" "}
-//       {new Date().getFullYear()}
-//       {"."}
-//     </Typography>
-//   );
-// }
-
-export default function HeroBanner() {
+export default function HeroBanner({ locale }) {
   const theme = useTheme();
 
   return (
     <React.Fragment>
       <RootDiv>
         <Overlay>
-          <Typography
-            variant={useMediaQuery(theme.breakpoints.down("sm")) ? "h4" : "h3"}
-            align="center"
-          >
-            Hisham A. A. Boodai Trading Est.
-          </Typography>
+          <br />
 
           <ButtonContainer>
+            <Typography
+              variant={
+                useMediaQuery(theme.breakpoints.down("sm")) ? "h5" : "h3"
+              }
+              align="center"
+              sx={{ margin: "0rem 0rem 2rem 0rem" }}
+            >
+              {locale === "en"
+                ? "Boodai Air Conditioning Contractors"
+                : " بودي للمقاولات لتكييف الهواء"}
+            </Typography>
             <Typography
               variant={
                 useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "h6"
               }
               align="center"
             >
-              Boodai for Air Conditioning Projects Division
+              {locale === "en"
+                ? "All your HVAC needs under one roof"
+                : "جميع احتياجاتك من HVAC تحت سقف واحد"}
             </Typography>
 
             <Button
@@ -97,23 +96,33 @@ export default function HeroBanner() {
               disableRipple
               variant="contained"
               color="primary"
-              onClick={()=>{
-                  const isBrowser = typeof window !== `undefined`;
-                  if (isBrowser) {
-                    scrollTo({
-                      top: 650,
-                      behavior: "smooth",
-                    });
-                  }
+              onClick={() => {
+                const isBrowser = typeof window !== `undefined`;
+                if (isBrowser) {
+                  scrollTo({
+                    top: 650,
+                    behavior: "smooth",
+                  });
+                }
               }}
             >
-              Know more
+              {locale == "en" ? "Know more" : "اعرف أكثر"}
             </Button>
-
-            <ArrowDownward color="primary" sx={{
-              float: "bottom"
-            }} />
           </ButtonContainer>
+          <CustomImg
+            src="/images/scroll-down.gif"
+            alt="scroll down"
+            referrerPolicy="no-referrer"
+            onClick={() => {
+              const isBrowser = typeof window !== `undefined`;
+              if (isBrowser) {
+                scrollTo({
+                  top: 650,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          />
         </Overlay>
       </RootDiv>
     </React.Fragment>

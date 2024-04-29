@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import Header from "./Header";
 import Container from "./Container";
+import { useRouter } from "next/router";
 
 /* Icon Imports */
 
@@ -62,6 +63,7 @@ const CustomLink = styled(Link)(({ theme }) => ({
   fontWeight: 600,
   color: theme.palette.text.secondary,
   textDecoration: "none",
+  cursor: "pointer",
   "@media (pointer: fine)": {
     "&:hover": {
       color: theme.palette.primary.main,
@@ -98,8 +100,13 @@ const Layout = ({
   noContain,
   children,
   noLayoutHeader,
+  locale,
 }) => {
   const theme = useTheme();
+
+  const router = useRouter();
+
+  const currentYear = new Date().getFullYear();
 
   /* Go to top */
 
@@ -193,10 +200,19 @@ const Layout = ({
             sx={{ background: theme.palette.background.paper }}
             elevation={2}
           >
-            <CustomToolbar>
-              <LogoContainer onClick={() => window.location.replace("/")}>
+            <CustomToolbar
+              sx={{
+                flexDirection: locale === "en" ? "row" : "row-reverse",
+              }}
+            >
+              <LogoContainer
+                onClick={() => window.location.replace("/")}
+                sx={{
+                  flexDirection: locale === "en" ? "row" : "row-reverse",
+                }}
+              >
                 <CustomImg
-                  alt="Beegru"
+                  alt="Boodai"
                   loading="lazy"
                   referrerPolicy="no-referrer"
                   height={30}
@@ -204,7 +220,11 @@ const Layout = ({
                   src="/images/boodai-logo.png"
                 />
 
-                <LogoText>
+                <LogoText
+                  sx={{
+                    alignItems: locale === "en" ? "flex-start" : "flex-end",
+                  }}
+                >
                   <Typography
                     variant="body1"
                     fontWeight={600}
@@ -214,7 +234,7 @@ const Layout = ({
                       lineHeight: "1.25rem",
                     }}
                   >
-                    Boodai
+                    {locale === "en" ? "Boodai" : "بودي"}
                   </Typography>
                   <Typography
                     variant="caption"
@@ -224,18 +244,24 @@ const Layout = ({
                     }}
                     onClick={() => window.location.replace("/")}
                   >
-                    Air Conditioning
+                    {locale === "en" ? "Air Conditioning" : "تكييف الهواء"}
                   </Typography>
                 </LogoText>
               </LogoContainer>
 
               <CustomLink
-                href="/index-arabic"
+                // href="/"
+                // locale="ar"
                 rel="noopener"
                 target="_self"
                 referrerPolicy="no-referrer"
+                onClick={() => {
+                  locale === "en"
+                    ? router.push("/", "/", { locale: "ar" })
+                    : router.push("/", "/", { locale: "en" });
+                }}
               >
-                العربية
+                {locale === "en" ? "العربية" : "English"}
               </CustomLink>
             </CustomToolbar>
           </AppBar>
@@ -260,6 +286,8 @@ const Layout = ({
           </CustomFab>
         </FabContainer>
 
+        {/* Main Content */}
+
         {children && noContain ? (
           React.Children.map(children, (child, key) =>
             noContain?.includes(key) ? (
@@ -281,6 +309,22 @@ const Layout = ({
             <Container noContain={false}>{children}</Container>
           </React.Fragment>
         )}
+
+        {/* Footer */}
+
+        <Typography
+          variant="body2"
+          color="white"
+          align="center"
+          sx={{
+            padding: "1rem 0rem 1rem 0rem",
+            background: theme.palette.secondary.main,
+          }}
+        >
+          {"© " +
+            currentYear +
+            " Boodai Air Conditioning. All Rights Reserved."}
+        </Typography>
       </div>
     </React.Fragment>
   );
