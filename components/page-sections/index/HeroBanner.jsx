@@ -73,7 +73,7 @@ export default function HeroBanner({ locale }) {
                 useMediaQuery(theme.breakpoints.down("sm")) ? "h5" : "h3"
               }
               align="center"
-              sx={{ margin: "0rem 0rem 2rem 0rem" }}
+              sx={{ margin: "0rem 0rem 2rem 0rem", color: "white" }}
             >
               {locale === "en"
                 ? "Boodai Air Conditioning Contractors"
@@ -84,6 +84,7 @@ export default function HeroBanner({ locale }) {
                 useMediaQuery(theme.breakpoints.down("sm")) ? "body1" : "h6"
               }
               align="center"
+              sx={{ color: "white" }}
             >
               {locale === "en"
                 ? "All your HVAC needs under one roof"
